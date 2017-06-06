@@ -1,0 +1,16 @@
+{
+  "name": "packages-list-extractor",
+  "version": "0.1.0",
+  "description": "Extracts packages with multiple options from package.json",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Ahmed Tarek",
+    "email": "ahmed.tokyo1@gmail.com",
+    "url": "http://github.com/a-tokyo"
+  },
+  "license": "MIT"
+}
