@@ -13,11 +13,17 @@ function Main() {
     return;
   }
 
-  let fileText = '# Dependancies: \n';
-  fileText += packagesToFileText(package.dependencies);
+  let fileText = '';
 
-  fileText += '# Dev Dependancies: \n';
-  fileText += packagesToFileText(package.devDependencies);
+  if(package.dependencies){
+    fileText = '# Dependancies: \n';
+    fileText += packagesToFileText(package.dependencies);
+  }
+
+  if(package.devDependencies){
+    fileText += '# Dev Dependancies: \n';
+    fileText += packagesToFileText(package.devDependencies);
+  }
 
   fs.writeFileSync(path.join(process.cwd(), 'dependencies.md'), fileText);
 }
