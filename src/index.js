@@ -5,15 +5,24 @@ Main();
 
 function Main() {
   let package = null;
-  try {
-    package = require(path.join(process.cwd(), 'package.json'));
-  } catch (e) {
-    console.log('Error reading package.json');
-    console.log(e);
-    return;
+  let packagePath = path.join(process.cwd(), 'package.json');
+  let fileText = '';
+  let filePath = path.join(process.cwd(), 'dependencies.md');
+
+  if(process.argv[2] && process.argv[2] != '-d'){
+    filePath = path.join(process.cwd(), process.argv[2]);
+  }
+  if(process.argv[3] && process.argv[3] != '-d'){
+    packagePath = path.join(process.cwd(), process.argv[3]);
   }
 
-  let fileText = '';
+  try {
+    package = require(packagePath);
+  } catch (e) {
+    console.warn('Error reading package.json');
+    console.error(e);
+    return;
+  }
 
   if(package.dependencies){
     fileText = '# Dependancies: \n';
@@ -25,7 +34,7 @@ function Main() {
     fileText += packagesToFileText(package.devDependencies);
   }
 
-  fs.writeFileSync(path.join(process.cwd(), 'dependencies.md'), fileText);
+  fs.writeFileSync(filePath, fileText);
 }
 
 function packagesToFileText (dependencies) {

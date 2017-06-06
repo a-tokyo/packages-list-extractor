@@ -12,5 +12,8 @@
     "email": "ahmed.tokyo1@gmail.com",
     "url": "http://github.com/a-tokyo"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
 }
