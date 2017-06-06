@@ -6,11 +6,17 @@ A simple node module that extracts npm packages from package.json with multiple 
 - In your project directory run `packages-list-extractor`
 - This will generate a file called dependancies.md in your app's root directory.
 
-## Customization
+## Path Customization
 The `packages-list-extractor` takes 2 argumnets.  
 The first being the file path to write to, defaults to 'dependencies.md'.  
 The second being the file path to package.json, defaults to 'package.json'.  
 To fallback to default arguments, add -d as the argument.
+
+## Template Customization
+Run `git clone https://github.com/A-Tokyo/packages-list-extractor`  
+Edit the template text in `src/index.js`  
+Run `npm link`  
+Use as mentioned in the getting started section.  
 
 ## Examples:
 - `packages-list-extractor` Runs with default paths.
