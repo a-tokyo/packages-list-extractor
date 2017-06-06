@@ -12,5 +12,9 @@
     "email": "ahmed.tokyo1@gmail.com",
     "url": "http://github.com/a-tokyo"
   },
+  "preferGlobal": true,
+  "bin": {
+    "packages-list-extractor": "src/index.js"
+  },
   "license": "MIT"
 }
